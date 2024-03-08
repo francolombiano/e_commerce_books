@@ -1,0 +1,39 @@
+:root {
+  --verte: #026670;
+  --verte-blue: #9FEDD7;
+  --creme: #FEF9C7;
+  --jaune: #FCE181;
+  --gray: #EDEAE5;
+  --black: #000;
+ --white: #FFFFFF;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+header {
+  background-image: url(../img/bg_navigation.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60vh; 
+}
+
+.livres{
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+
+
+
