@@ -1,25 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- lien pour Bootstrap -->
+    <!-- Link for google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <!-- link for Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- lien pour les icons de Bootstrap -->
+    <!-- link for Bootstrap icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <!-- Lien pour CSS -->
+    <!-- Link for CSS -->
     <link rel="stylesheet" href="./assets/style/style.css">
     <title>Accueil</title>
 </head>
 
 <body>
-    <header class="border-bottom border-black border-5">
+    <header class="border-bottom border-5">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg p-3">
+        <nav class="navbar navbar-expand-lg p-2">
             <div class="container-fluid"> <!-- Logo -->
-                <a class="navbar-brand" href="#"> <img src="./assets/img/logo_livres.png" alt="Logo" height="150"> </a>
+                <a class="navbar-brand" href="#"> <img src="./assets/img/logo_livres.png" alt="Logo" height="100"> </a>
 
                 <!-- Menu Navigation -->
                 <ul class="navbar-nav mr-auto">
@@ -46,31 +51,31 @@
 
                 <!-- Cart -->
                 <a class="nav-link" href="#">
-                    <i class="bi bi-cart-fill text-white"></i>
+                    <i class="bi bi-cart-fill text-white display-6"></i>
                 </a>
 
                 <!-- Login -->
                 <a class="nav-link" href="#">
-                    <i class="bi bi-person-circle text-white"></i>
+                    <i class="bi bi-person-circle text-white display-6"></i>
                 </a>
             </div>
         </nav>
 
-        <!-- titre -->
-        <div class="livres text-white text-center">
-            <h1>Livres pour tous</h1>
+        <!-- title -->
+        <div class="titre text-white text-center">
+            <h1>Livres pour tous!</h1>
         </div>
 
     </header>
 
     <main>
-        <div class="phrase col-8 text-center mx-auto">
-            <h2>Acheter des livres n'est pas une dépense, c'est un investissement qui libère l'esprit, le corps et
-                réjouit l'âme.</h2>
+        <div class="phrase col-8 text-center mx-auto p-5">
+            <h3>Acheter des livres n'est pas une dépense, c'est un investissement qui libère l'esprit, le corps et
+                réjouit l'âme.</h3>
         </div>
 
         <section>
-            <div class="container-fluid livres">
+            <div class="container-fluid livres p-3">
                 <div class="row justify-content-center">
                     <article class="col-4">
                         <div>
@@ -94,7 +99,7 @@
                     <article class="col-4">
                         <div>
                             <figure>
-                                <img src="./assets/img/livre1.jpg" alt="">
+                                <img src="./assets/img/livre2.jpg" alt="">
                                 <div class="pretitre">
                                     <h3>LIFESTYLE</h3>
                                 </div>
@@ -113,7 +118,26 @@
                     <article class="col-4">
                         <div>
                             <figure>
-                                <img src="./assets/img/livre1.jpg" alt="">
+                                <img src="./assets/img/livre3.jpg" alt="">
+                                <div class="pretitre">
+                                    <h3>LIFESTYLE</h3>
+                                </div>
+                                <div class="titre">
+                                    <h2>Life tastes better with coffee</h2>
+                                </div>
+                                <figcaption>Morbi vitae arcu id libero hendrerit congue.
+                                    Phasellus mattis volutpat finibus. Nam tellus metus, sollicitudin
+                                    id lacinia vel, scelerisque vitae ligula. Nulla eu lobortis nisl.
+                                    Nulla eu leo a mi dignissim vestibulum. Morbi sit amet massa
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </article>
+
+                    <article class="col-4">
+                        <div>
+                            <figure>
+                                <img src="./assets/img/livre4.jpg" width="150" alt="">
                                 <div class="pretitre">
                                     <h3>LIFESTYLE</h3>
                                 </div>
@@ -151,7 +175,7 @@
                     <article class="col-4">
                         <div>
                             <figure>
-                                <img src="./assets/img/livre1.jpg" alt="">
+                                <img src="./assets/img/livre2.jpg" alt="">
                                 <div class="pretitre">
                                     <h3>LIFESTYLE</h3>
                                 </div>
@@ -170,7 +194,7 @@
                     <article class="col-4">
                         <div>
                             <figure>
-                                <img src="./assets/img/livre1.jpg" alt="">
+                                <img src="./assets/img/livre3.jpg" alt="">
                                 <div class="pretitre">
                                     <h3>LIFESTYLE</h3>
                                 </div>
@@ -189,26 +213,7 @@
                     <article class="col-4">
                         <div>
                             <figure>
-                                <img src="./assets/img/livre1.jpg" alt="">
-                                <div class="pretitre">
-                                    <h3>LIFESTYLE</h3>
-                                </div>
-                                <div class="titre">
-                                    <h2>Life tastes better with coffee</h2>
-                                </div>
-                                <figcaption>Morbi vitae arcu id libero hendrerit congue.
-                                    Phasellus mattis volutpat finibus. Nam tellus metus, sollicitudin
-                                    id lacinia vel, scelerisque vitae ligula. Nulla eu lobortis nisl.
-                                    Nulla eu leo a mi dignissim vestibulum. Morbi sit amet massa
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </article>
-
-                    <article class="col-4">
-                        <div>
-                            <figure>
-                                <img src="./assets/img/livre1.jpg" alt="">
+                                <img src="./assets/img/livre4.jpg" alt="">
                                 <div class="pretitre">
                                     <h3>LIFESTYLE</h3>
                                 </div>
@@ -255,6 +260,10 @@
         </section>
 
     </main>
+
+    <footer>
+
+    </footer>
 
 
 
