@@ -6,7 +6,6 @@
   --gray: #EDEAE5;
   --black: #000;
  --white: #FFFFFF;
-
 }
 
 * {
@@ -19,34 +18,86 @@
 img {
   width: 100%;
 }
-
-header {
-  background-image: url(../img/bg_navigation.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 95vh; 
+/* Image de fond */
+.affiche {
+   background-image: url(../img/bg_navigation.jpg);
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+  height: 80vh; 
 }
 
+/* Div contenant les livres */
 .livres{
   width: 80%;
   margin: 0 auto;
-}
-
-h1, h3, a {
-  font-family: merienda;
-}
-
-.livres{
   background-color: var(--gray);
 }
 
+/* balises */
+h1, h3, a {
+  font-family: lato;
+}
+
+/* phrase d'introduction */
 .phrase{
   color: var(--verte);
 }
 
+/* fond pour le header */
+.en-tete {
+  background-color: var(--verte);
+}
 
+/* color de le titre */
+.site-name {
+  padding: 30%;
+  color: var(--verte);
+}
 
+/* Menu déroulant pour vous inscrire et vous connecter */
+#dropdownMenu {
+  display: none;  /*L'élément ne s'affiche pas sur la page*/
+  position: absolute;
+  background-color: var(--verte-blue);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
 
+#dropdownMenu .choice {
+  color: var(--verte);
+ /* padding: 12px 16px;*/
+  text-decoration: none; 
+  display: block;
+}
 
+#dropdownMenu .choice:hover {
+  background-color: var(--jaune);
+}
+/*
+.login:hover{
+  background-color: var(--jaune);
+}*/
 
+/* texte final de footer a cote de logo */
+.texte-final {
+  padding-top: 10%;
+  padding-left: 15px;
+}
+/* Logo footer */
+.logo-retrait {
+  padding-left: 5%;
+}
+/* Reseaux sociaux footer */
+.reseaux { 
+  padding-left: 5%;
+}
+/* Font footer */
+.final {
+  background-color: var(--verte);
+}
+/* Padding donees footer */
+.donees {
+  padding-left: 15%;
+}
