@@ -55,7 +55,6 @@ h1, h3, a {
   color: var(--verte);
 }
 
-/* Menu déroulant pour vous inscrire et vous connecter */
 #dropdownMenu {
   display: none;  /*L'élément ne s'affiche pas sur la page*/
   position: absolute;
@@ -80,6 +79,7 @@ h1, h3, a {
   background-color: var(--jaune);
 }*/
 
+
 /* texte final de footer a cote de logo */
 .texte-final {
   padding-top: 10%;
@@ -101,3 +101,5 @@ h1, h3, a {
 .donees {
   padding-left: 15%;
 }
+
+
