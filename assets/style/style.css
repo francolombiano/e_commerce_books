@@ -102,4 +102,75 @@ h1, h3, a {
   padding-left: 15%;
 }
 
+/* Contactez-nous */
+.ensayo {
+  background-color: rgb(197, 191, 191);
+}
+
+.search-form {
+  max-width: 30%;    
+  padding: 10px;
+  align-items: self-end;
+  display: flex;
+  justify-content: end;  
+}
+
+.input-search{
+  position: relative;
+  background: transparent;
+  padding: 10px;
+}
+.input-search[type="search"]::placeholder{
+  color: white;
+}
+
+.search-icon{
+  position: absolute;
+  background-color: transparent;
+  font-size: x-large;
+}
+
+.formV{
+  background-color: var(--verte);
+}
+.bg-promo{
+
+  background-color: rgb(214, 210, 210) !important;
+}
+.small-img1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+ 
+}
+.small-img2{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ margin: 10px;
+}
+
+.small-img1 img{
+  height: 50%;
+  width: 100%;
+  padding: 10px;
+}
+.small-img2 img{
+  height: 50%;
+  width: 100%;
+  padding: 10px;
+}
+
+.promo1{
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+}
+.promo2{
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+
+
 

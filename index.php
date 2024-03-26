@@ -46,10 +46,9 @@
                             <a class="nav-link text-white" href="#">EXPEDITION ET RETOUR</a>
                         </li>
                         <li class="nav-item p-2">
-                            <a class="nav-link text-white" href="#">CONTACT NOUS</a>
+                            <a class="nav-link text-white" href="./contactez_nous.php">CONTACT NOUS</a>
                         </li>
-
-                        <!-- Login -->
+                         <!-- Login -->
                         <div class="mx-auto">
                             <a class="nav-link" href="#" id="dropdownIcon">
                                 <i class="bi bi-person-circle text-white display-6 col-sm-12 col-md-3"></i>
@@ -61,12 +60,13 @@
                             </div>
                         </div>
                         
-
                         <!-- Cart -->
                         <a class="nav-link mx-auto" href="#">
                             <i class="bi bi-cart-fill text-white col-sm-12 col-md-3 display-6"></i>
                         </a>
                     </ul>
+                     
+                      
                 </div>
         </section>
         <!-- title -->
@@ -79,7 +79,7 @@
             <div class="site-name text-center col-sm-12 col-md-12">
                 <h1>Livres pour tous!</h1>
             </div>
-        </div>
+        </div>      
         <!-- introductory phrase -->
         <div class="phrase text-center mx-auto p-5 d-sm-none col-md-8">
             <h3>Acheter des livres n'est pas une dépense, c'est un investissement qui libère l'esprit, le corps et
