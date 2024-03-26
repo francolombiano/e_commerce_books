@@ -1,0 +1,176 @@
+:root {
+  --verte: #026670;
+  --verte-blue: #9FEDD7;
+  --creme: #FEF9C7;
+  --jaune: #FCE181;
+  --gray: #EDEAE5;
+  --black: #000;
+ --white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+/* Image de fond */
+.affiche {
+   background-image: url(../img/bg_navigation.jpg);
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+  height: 80vh; 
+}
+
+/* Div contenant les livres */
+.livres{
+  width: 80%;
+  margin: 0 auto;
+  background-color: var(--gray);
+}
+
+/* balises */
+h1, h3, a {
+  font-family: lato;
+}
+
+/* phrase d'introduction */
+.phrase{
+  color: var(--verte);
+}
+
+/* fond pour le header */
+.en-tete {
+  background-color: var(--verte);
+}
+
+/* color de le titre */
+.site-name {
+  padding: 30%;
+  color: var(--verte);
+}
+
+#dropdownMenu {
+  display: none;  /*L'élément ne s'affiche pas sur la page*/
+  position: absolute;
+  background-color: var(--verte-blue);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+#dropdownMenu .choice {
+  color: var(--verte);
+ /* padding: 12px 16px;*/
+  text-decoration: none; 
+  display: block;
+}
+
+#dropdownMenu .choice:hover {
+  background-color: var(--jaune);
+}
+/*
+.login:hover{
+  background-color: var(--jaune);
+}*/
+
+
+/* texte final de footer a cote de logo */
+.texte-final {
+  padding-top: 10%;
+  padding-left: 15px;
+}
+/* Logo footer */
+.logo-retrait {
+  padding-left: 5%;
+}
+/* Reseaux sociaux footer */
+.reseaux { 
+  padding-left: 5%;
+}
+/* Font footer */
+.final {
+  background-color: var(--verte);
+}
+/* Padding donees footer */
+.donees {
+  padding-left: 15%;
+}
+
+/* Contactez-nous */
+.ensayo {
+  background-color: rgb(197, 191, 191);
+}
+
+.search-form {
+  max-width: 30%;    
+  padding: 10px;
+  align-items: self-end;
+  display: flex;
+  justify-content: end;  
+}
+
+.input-search{
+  position: relative;
+  background: transparent;
+  padding: 10px;
+}
+.input-search[type="search"]::placeholder{
+  color: white;
+}
+
+.search-icon{
+  position: absolute;
+  background-color: transparent;
+  font-size: x-large;
+}
+
+.formV{
+  background-color: var(--verte);
+}
+.bg-promo{
+
+  background-color: rgb(214, 210, 210) !important;
+}
+.small-img1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+ 
+}
+.small-img2{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ margin: 10px;
+}
+
+.small-img1 img{
+  height: 50%;
+  width: 100%;
+  padding: 10px;
+}
+.small-img2 img{
+  height: 50%;
+  width: 100%;
+  padding: 10px;
+}
+
+.promo1{
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+}
+.promo2{
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+
+
+
