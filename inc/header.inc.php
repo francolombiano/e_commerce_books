@@ -29,7 +29,7 @@
                     <!-- Menu Navigation -->
                     <ul class="navbar-nav col-sm-12 d-flex col-md-10 mx-auto">
                         <li class="nav-item p-2">
-                            <a class="nav-link text-white" href="index.php">ACCUEIL</a>
+                            <a class="nav-link text-white" href="#">ACCUEIL</a>
                         </li>
                         <li class="nav-item p-2">
                             <a class="nav-link text-white" href="#">LES LIVRES</a>
@@ -38,13 +38,13 @@
                             <a class="nav-link text-white" href="#">A PROPOS</a>
                         </li>
                         <li class="nav-item p-2">
-                            <a class="nav-link text-white" href="payment.php">PAIEMENT SECURISE</a>
+                            <a class="nav-link text-white" href="#">PAIEMENT SECURISE</a>
                         </li>
                         <li class="nav-item p-2">
                             <a class="nav-link text-white" href="#">EXPEDITION ET RETOUR</a>
                         </li>
                         <li class="nav-item p-2">
-                            <a class="nav-link text-white" href="./contactez_nous.php">CONTACT NOUS</a>
+                            <a class="nav-link text-white" href="#">CONTACT NOUS</a>
                         </li>
 
                         <!-- Login -->
