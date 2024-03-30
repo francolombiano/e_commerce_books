@@ -12,3 +12,18 @@ document.getElementById('dropdownIcon').addEventListener('click', function() {
     }
 });
 
+// Pour afficher et masquer le mot de passe
+function togglePasswordVisibility() {
+    let passwordInput = document.getElementById('password-input');
+    let eyeIcon = document.getElementById('eye-icon');
+
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeIcon.classList.remove('fa-eye');
+        eyeIcon.classList.add('fa-eye-slash');
+    } else {
+        passwordInput.type = 'password';
+        eyeIcon.classList.remove('fa-eye-slash');
+        eyeIcon.classList.add('fa-eye');
+    }
+}

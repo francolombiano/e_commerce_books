@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -31,7 +31,7 @@
                     <!-- Menu Navigation -->
                     <ul class="navbar-nav col-sm-12 d-flex col-md-10 mx-auto">
                         <li class="nav-item p-2">
-                            <a class="nav-link text-white" href="#">ACCUEIL</a>
+                            <a class="nav-link text-white" href="./index.php">ACCUEIL</a>
                         </li>
                         <li class="nav-item p-2">
                             <a class="nav-link text-white" href="#">LES LIVRES</a>
@@ -75,11 +75,12 @@
 
     <main>
         <!--image de fond  -->
-        <div class="affiche">
-            <div class="site-name text-center col-sm-12 col-md-12">
-                <h1>Livres pour tous!</h1>
-            </div>
-        </div>      
+        <div class="affiche"> 
+            <div class="site-name text-center col-sm-12 col-md-12"> 
+                <h1 class="display-4">Livres pour tous!</h1> 
+             </div> 
+        </div> 
+
         <!-- introductory phrase -->
         <div class="phrase text-center mx-auto p-5 d-sm-none col-md-8">
             <h3>Acheter des livres n'est pas une dépense, c'est un investissement qui libère l'esprit, le corps et
