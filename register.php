@@ -14,7 +14,7 @@ require_once "inc/header.inc.php";
 
   <!-- Formulaire de contact -->
   <section class="ecrivez-nous p-5">
-    <form action="#" method="#" class="w-50 mx-auto p-3 text-white rounded-5 formV border p-5 col-sm-12 col-md-8">
+    <form action="#" method="post" class="w-50 mx-auto p-3 text-white rounded-5 formV border p-5 col-sm-12 col-md-8">
 
       <div class="p-3 inputs col-sm-12">
         <label for="prenom" class="form-label">Prenom</label>
@@ -77,22 +77,9 @@ require_once "inc/header.inc.php";
       <!-- </div> -->
     </form>
   </section>
+  <?php
+  require_once "inc/footer.inc.php";
+  ?>
+  </footer>
 
 </main>
-
-
-
-
-<?php
-require_once "inc/footer.inc.php";
-?><?php
-  $title = "enregistrement";
-  require_once "inc/header.inc.php";
-  ?>
-
-
-
-
-<?php
-require_once "inc/footer.inc.php";
-?>

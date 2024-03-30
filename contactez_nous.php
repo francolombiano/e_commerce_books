@@ -75,11 +75,10 @@ require_once "inc/header.inc.php";
             </div>
         </div>
 
-    </section>
+
+        <?php
+        require_once "inc/footer.inc.php";
+        ?>
+        </footer>
 </main>
-
-<?php
-require_once "inc/footer.inc.php";
-?>
-
 <!-- Code vérifié par le validateur W3 -->

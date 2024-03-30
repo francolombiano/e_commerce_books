@@ -1,8 +1,22 @@
+<?php
+require_once "functions.inc.php";
+
+
+
+?>
+
+<!-- header.inc.php  -->
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link for google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +27,7 @@
     <!-- link for Bootstrap icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <!-- Link for CSS -->
-    <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="<?= RACINE_SITE ?>/assets/style/style.css">
     <title><?= $title ?></title>
 </head>
 
@@ -49,7 +63,7 @@
 
                         <!-- Login -->
                         <div class="mx-auto">
-                            <a class="nav-link" href="#" id="dropdownIcon">
+                            <a class="nav-link" href="register.php" id="dropdownIcon">
                                 <i class="bi bi-person-circle text-white display-6 col-sm-12 col-md-3"></i>
                             </a>
 
