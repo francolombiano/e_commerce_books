@@ -1,21 +1,34 @@
+<?php
+require_once "functions.inc.php";
+
+
+
+?>
+
+<!-- header.inc.php  -->
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link for google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <!-- link for Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- link for Bootstrap icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <!-- Link for CSS -->
-    <link rel="stylesheet" href="./assets/style/style.css">
-    <title>Accueil</title>
+    <link rel="stylesheet" href="<?= RACINE_SITE ?>/assets/style/style.css">
+    <title><?= $title ?></title>
 </head>
 
 <body>
@@ -30,7 +43,7 @@
                     <!-- Menu Navigation -->
                     <ul class="navbar-nav col-sm-12 d-flex col-md-10 mx-auto">
                         <li class="nav-item p-2">
-                            <a class="nav-link text-white" href="#">ACCUEIL</a>
+                            <a class="nav-link text-white" href="index.php">ACCUEIL</a>
                         </li>
                         <li class="nav-item p-2">
                             <a class="nav-link text-white" href="#">LES LIVRES</a>
@@ -39,18 +52,18 @@
                             <a class="nav-link text-white" href="#">A PROPOS</a>
                         </li>
                         <li class="nav-item p-2">
-                            <a class="nav-link text-white" href="#">PAIEMENT SECURISE</a>
+                            <a class="nav-link text-white" href="payment.php">PAIEMENT SECURISE</a>
                         </li>
                         <li class="nav-item p-2">
                             <a class="nav-link text-white" href="#">EXPEDITION ET RETOUR</a>
                         </li>
                         <li class="nav-item p-2">
-                            <a class="nav-link text-white" href="#">CONTACT NOUS</a>
+                            <a class="nav-link text-white" href="contactez_nous.php">CONTACT NOUS</a>
                         </li>
 
                         <!-- Login -->
                         <div class="mx-auto">
-                            <a class="nav-link" href="#" id="dropdownIcon">
+                            <a class="nav-link" href="register.php" id="dropdownIcon">
                                 <i class="bi bi-person-circle text-white display-6 col-sm-12 col-md-3"></i>
                             </a>
 
@@ -59,7 +72,7 @@
                                 <a class="login choice text-center" href="#">Commencer la session</a>
                             </div>
                         </div>
-                        
+
 
                         <!-- Cart -->
                         <a class="nav-link mx-auto" href="#">
