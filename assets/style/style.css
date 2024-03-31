@@ -103,7 +103,7 @@ h1, h3, a {
 }
 
 /* ************************Contactez-nous****************** */
-.bg-contact {
+.bg-contact .bg-register{
   background-color: var(--gray);
 }
 
