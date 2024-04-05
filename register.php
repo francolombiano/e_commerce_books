@@ -29,6 +29,7 @@ require_once "inc/header.inc.php";
       <div id="nomError" class="error"></div>
       <span class="inputError"></span>
   </div>
+  
 
   <div class="p-3 inputs col-sm-12"> 
   <label for="tel" class="form-label">Téléphone</label> 
@@ -49,7 +50,7 @@ require_once "inc/header.inc.php";
         <input type="password" class="form-control rounded-pill input-custom" id="password" name="password">
         <i class="bi bi-eye-slash ms-3 iconeye" id="togglePassword"></i>
         <div id="passwordError" class="error"></div>
-        <span class="inputError"></span>
+        <!-- <span class="inputError"></span> -->
        
   </div>
 
@@ -58,7 +59,7 @@ require_once "inc/header.inc.php";
         <input type="password" class="form-control rounded-pill input-custom" id="confirmPassword" name="confirmPassword">
         <i class="bi bi-eye-slash ms-3 iconeye1" id="toggleConfirmPassword"></i>
         <div id="confirmPwdError" class="error"></div>
-        <span class="inputError"></span>
+        <!-- <span class="inputError"></span> -->
   </div>
 
   <div class="p-3 civilite col-sm-12">

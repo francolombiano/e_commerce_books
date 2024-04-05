@@ -65,7 +65,7 @@ showConfirMdp.addEventListener("click", function() {
     }
 });
 
-// validation de le formulaire
+// validation de le formulaire*******************
 let myForm = document.querySelector('form');
 //console.log(myForm);
  let inputPrenom = document.getElementById('prenom');
@@ -80,7 +80,6 @@ let inputTelephone = document.getElementById('tel');
 //console.log(inputTelephone);
 let telError = document.getElementById('telephoneError');
 //console.log(telError);
-
 let inputEmail = document.getElementById('email');
 //console.log(inputEmail);
 let emailError = document.getElementById('emailError');
@@ -112,49 +111,171 @@ let paysError = document.getElementById('payserror');
 // let messageError = document.getElementById('messageError');
 
 
-//myForm.addEventListener('submit', function(event){
-  //event.preventDefault();
-   
-//     let valueFullName = inputFullName.value.trim();
-//     let valueLastName = inputLastName.value.trim();
-//     let valueChoice = inputChoice.value;
-//     let valueEmail = inputEmail.value.trim();
-//     let valueMessage = inputMessage.value.trim();
+myForm.addEventListener('submit', function(event){
+            event.preventDefault();
+    let valuePrenom = inputPrenom.value.trim();
+    let valueNom = inputNom.value.trim();
+    let valueEmail = inputEmail.value.trim();
+    let valueCodePostal = inputCodePostal.value.trim();
+    let valueVille = inputVille.value.trim();
+    let valuePays = inputPays.value.trim();
+    let valueTelephone = inputTelephone.value;
+    let valueChoice = inputChoice.value;
+    let valuePassword = inputPassword.value;
+    let valueConfirmPwd = inputConfirmPwd.value;
 
-//     fullnameError.textContent = '';
-//     lastnameError.textContent = '';
-//     choiceError.textContent = '';
-//     emailError.textContent = '';
-//     messageError.textContent = '';
+
+        prenomError.textContent = '';
+        nomError.textContent = '';
+        telError.textContent = '';
+        emailError.textContent = '';
+        passwordError.textContent = '';
+        confirmPwdError.textContent = '';
+        choiceError.textContent = '';
+        codePostalError.textContent ='';
+        villError.textContent = '';
+        paysError.textContent = '';
     
+//Vérifiez que le champ du nom n'est pas vide
+  if (valuePrenom === '') {
+    prenomError.textContent = 'Veuillez entrer votre prenom';
+    inputPrenom.focus();
+    return;
+}
 
-// // To verify that the name field is not empty
-//   if (valueFullName === '') {
-//     fullnameError.textContent = 'Veuillez entrer votre prenom';
-//     inputFullName.focus();
-//     return;
-//   }
+if (valuePrenom.length < 3 || valuePrenom.length > 20) {
+    prenomError.textContent = 'Le prenom doit comporter entre 3 et 10 caractères..';
+    inputPrenom.focus(); 
+    return false;
+    }
 
-// //To verify that the lasstname field is not empty
-//   if (valueLastName === '') {
-//     lastnameError.textContent = 'Veuillez entrer votre nom';
-//     inputLastName.focus();
-//     return;
-//   }
+// Vérifiez que le champ Nom de famille n'est pas vide
+  if (valueNom === '') {
+    nomError.textContent = 'Veuillez entrer votre nom';
+    inputNom.focus();
+       return;
+    }
 
-// //To verify that the choice field is not empty
-//   if ( valueChoice == "") {
-//     choiceError.textContent = 'Vous devez choisir une option';
-//     inputChoice.focus();
-//     return;
-//   }
+    if (valueNom.length < 3 || valueNom.length > 20) {
+        nomError.textContent = 'Le nom de famille doit comporter entre 3 et 10 caractères.';
+        inputNom.focus(); 
+        return false;
+    }
 
-// // To verify that the email field is not empty
-//   if (valueEmail === '') {
-//     emailError.textContent = 'Veuillez entrer votre email';
-//     inputEmail.focus();
-//     return;
-//   }
+//Pour vérifier que le champ téléphone n'est pas vide et est correctement renseigné
+if (valueTelephone.length < 10) {
+    telError.textContent = "Please enter a valid phone number";
+  } else {
+    telError.textContent = "";
+  }
+  
+
+// if (valueTelephone === ''|| valueTelephone.length !== 10) {
+    //     telError.textContent = 'Vous devez entrer un numéro de téléphone valide';
+    //     inputTelephone.focus();
+    //     return;
+    // } else {
+    //     telError.textContent = '';
+    //     return;
+    // }
+
+// Pour vérifier que le champ email n'est pas vide
+
+    if (valueEmail === '') {
+       emailError.textContent = 'Veuillez entrer votre email';
+       inputEmail.focus();
+        return;
+         }
+
+// Expression régulière pour valider le format de l'e-mail
+let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  if (!emailRegex.test(valueEmail)) { 
+    emailError.textContent = 'Veuillez entrer un email valide';
+    inputEmail.focus();
+    return;
+}else {
+        emailError.textContent = '';
+     }
+
+if (valuePassword === '') {
+    passwordError.textContent = 'Vous devez entrer un mot de passe valide';
+    inputPassword.focus();
+    return;
+    }
+
+if (valueConfirmPwd === '') {
+    confirmPwdError.textContent = 'Vous devez confirmer le mot de passe';
+    inputEmail.focus();
+    return;
+}
+
+// Expression régulière pour valider le format du mot de passe, Le mot de passe doit comporter au moins 8 caractères, 1 lettre majuscule, 1 lettre minuscule, 1 chiffre et 1 caractère spécial (entre !@#$%^&*(),.?":{}|<>).
+
+let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+if (!passwordRegex.test(valuePassword)) {
+    passwordError.textContent = "Le mot de passe doit contenir au moins 8 caractères, 1 majuscule, 1 minuscule, 1 chiffre, et 1 caractère spécial.";
+    inputPassword.focus();
+    return;
+} else {
+    passwordError.textContent = '';
+}
+
+
+// Pour valider la confirmation du mot de passe
+    if (valuePassword !== valueConfirmPwd) {
+        confirmPwdError.textContent = "Les mots de passe ne correspondent pas.";
+        inputConfirmPwd.focus();
+        return;
+    } else {
+        confirmPwdError.textContent = '';
+    }
+
+// Pour vérifier que le champ civilité n'est pas vide
+   if (valueChoice == "") {
+     choiceError.textContent = 'Vous devez choisir une option';
+       inputChoice.focus();
+    return;
+   }
+
+// Pour vérifier que le champ code postal n'est pas vide
+   if (valueCodePostal == "") {
+    codePostalError.textContent = 'Vous devez préciser un code postal';
+      inputCodePostal.focus();
+   return;
+  }
+
+// Pour vérifier que le ville n'est pas vide 
+  if (valueVille == "") {
+    villError.textContent = 'Vous devez préciser une Ville';
+      inputVille.focus();
+   return;
+  }
+
+//   Pour valider que la ville ne contient que des lettres et des espaces
+//   let villeRegex = /^[A-Za-z\s]+$/; 
+//   if (!villeRegex.test(valueVille)) {
+//        villError.textContent = 'Veuillez saisir une ville valide.';
+//        inputVille.focus();
+//        return false;
+//   } else { return true;
+// }
+
+if (valueVille.length < 3 || valueVille.length > 20) {
+   villError.textContent = 'Vous devez saisir un nom de ville valide.';
+   inputVille.focus(); 
+   return false;
+}
+
+
+// Pour vérifier que le champ pays n'est pas vide
+if (valuePays == "") {
+    paysError.textContent = 'Vous devez préciser un pays';
+      inputPays.focus();
+   return;
+  }
+
 
 // //To verify that the name field contains two characters
 //   if (valueFullName.length < 2) {
@@ -172,32 +293,23 @@ let paysError = document.getElementById('payserror');
 //     return;
 //   }
 
-// //To verify that the text field has 15 characters at hand
-//   if (valueMessage.length < 30) {
-//     messageError.textContent = 'Votre message doit comporter au moins 30 caractères';
-//     inputMessage.focus();
-//     return;
-//   }
-
-//   //Email validation
-  
-//   let regexMail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-
-//   if (!regexMail.test(valueEmail)) { 
-//     emailError.textContent = 'Lemail saisi nest pas correct';
-//     return;
-// }
-
 // //If all the fields are correct, send the form and clean it
 // //alert('Formulaire soumis avec succès');
-// inputFullName.style.borderColor = 'green';
-// inputLastName.style.borderColor = 'green';
-// inputChoice.style.borderColor = 'green';
-// inputEmail.style.borderColor = 'green';
-// inputMessage.style.borderColor = 'green';
-// myForm.reset();
+inputPrenom.style.borderColor = 'red';
+inputNom.style.borderColor = 'red';
+inputTelephone.style.borderColor = 'red';
+inputEmail.style.borderColor = 'red';
+inputPassword.style.borderColor = 'red';
+inputConfirmPwd.style.borderColor = 'red';
+inputChoice.style.borderColor = 'red';
+inputCodePostal.style.borderColor = 'red';
+inputVille.style.borderColor = 'red';
+inputPays.style.borderColor = 'red';
 
-// });
+myForm.reset();
+
+
+});
 
 
 
