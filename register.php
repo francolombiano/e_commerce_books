@@ -2,11 +2,13 @@
 
 require_once "inc/functions.inc.php";
 
-if (!empty($_SESSION['user'])) {
+// if (!empty($_SESSION['user'])) {
 
-  header("location:" . RACINE_SITE . "profil.php");
-}
+//   header("location:" . RACINE_SITE . "profil.php");
+// }
 // ==================
+$info = ''; // Initialisez $info avec une chaîne vide
+
 
 if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" ) 
 {
@@ -14,6 +16,7 @@ if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" )
 
 
   $verif = true;
+
   foreach ($_POST as $value) {
 
 
@@ -22,7 +25,7 @@ if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" )
       $verif = false;
     }
   }
-  $info = '';
+
 
   if (!$verif) {
 
@@ -33,8 +36,9 @@ if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" )
 
 
     // debug($_POST);
-    $firstName = isset($_POST['firstName']) ? $_POST['firstName'] : null;
-    $lastName = isset($_POST['lastName']) ? $_POST['lastName'] : null;
+
+    $firstName = isset($_POST['prenom']) ? $_POST['prenom'] : null;
+    $lastName = isset($_POST['nom']) ? $_POST['nom'] : null;
     $tel = isset($_POST['tel']) ? $_POST['tel'] : null;
     $email = isset($_POST['email']) ? $_POST['email'] : null;
     $password = isset($_POST['password']) ? $_POST['password'] : null;
@@ -74,10 +78,35 @@ if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" )
     if ($civility != 'femme' && $civility != 'homme' && $civility != 'autre') {
       $info .= alert("La civilité n'est pas valide.", "danger");
     }
+
+    if (empty($info)) {
+
+      $emailExist = checkEmailUser($email);
+
+      if ($emailExist) {
+
+
+        $info = alert("Cet email a déjà un compte", "danger");
+        // ***************** REDIRECTION "authentification.php"
+
+      } else if ($password !== $confirmPassword) {
+
+        $info .= alert("Le mot de passe et la confirmation doivent être identiques.", "danger");
+      } else {
+
+        $password = password_hash($password, PASSWORD_DEFAULT);
+
+        inscriptionUsers($firstName, $lastName, $tel, $email, $password, $civility, $cpostal, $ville, $pays);
+
+        $info = alert('Vous êtes bien inscrit, vous pouvez vous connectez !', 'success');
+      }
+    }
   }
 }
-
-
+// else {
+//   debug($_POST);
+//   echo 'Non SUBMIT';
+// }
 
 
 $title = "enregistrement";
@@ -85,7 +114,7 @@ require_once "inc/header.inc.php";
 ?>
 
 <main class="bg-register">
-
+  <div class=" mt-0"><?= $info; ?></div>
   <!-- Image d'en-tête contactez-nous -->
   <section class="affiche-inscription">
 
@@ -99,7 +128,7 @@ require_once "inc/header.inc.php";
   </section>
 
   <!-- Formulaire de contact -->
-  <section class="ecrivez-nous p-5"> <?= $info; ?>
+  <section class="ecrivez-nous p-5">
     <form action="#" method="post" class="w-50 mx-auto p-3 text-white rounded-5 formV border p-5 col-sm-12 col-md-8">
 
       <div class="p-3 inputs col-sm-12">

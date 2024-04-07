@@ -98,15 +98,15 @@ function connexionBdd()
 }
 //////////////////// Fonctions du CRUD pour les utilisateurs Users /////////////////////
 
-function inscriptionUsers(string $firstName, string $lastName,  string $tel, string $email,  string $password, string $civility, string $cpostal, string $ville, string $pays): void
+function inscriptionUsers(string $firstName, string $lastName, string $tel, string $email, string $password, string $civility, string $cpostal, string $ville, string $pays): void
 {
 
     $pdo = connexionBdd(); // je stock ma connexion  à la BDD dans une variable
 
     $sql = "INSERT INTO users 
-        (firstName, lastName, tel, password, civility, cpostal, ville, pays)
+        (firstName, lastName, tel, email, password, civility, cpostal, ville, pays)
         VALUES
-        (:firstName, :lastName, :tel, :password, :civility, :cpostal, :ville, :pays, )"; // Requête d'insertion que je stock dans une variable
+        (:firstName, :lastName, :tel, :email, :password, :civility, :cpostal, :ville, :pays)"; // Requête d'insertion que je stock dans une variable
     $request = $pdo->prepare($sql); // Je prépare ma requête et je l'exécute
     $request->execute(
         array(
@@ -116,11 +116,27 @@ function inscriptionUsers(string $firstName, string $lastName,  string $tel, str
             ':email' => $email,
             ':password' => $password,
             ':civility' => $civility,
-            ':cpostal ' => $cpostal,
-            ':ville ' => $ville,
-            ':pays ' => $pays,
+            ':cpostal' => $cpostal,
+            ':ville' => $ville,
+            ':pays' => $pays
 
 
         )
     );
+}
+
+////////////////// Fonction pour vérifier si un email existe dans la BDD ///////////////////////////////
+
+function checkEmailUser(string $email): mixed
+{
+    $pdo = connexionBdd();
+    $sql = "SELECT * FROM users WHERE email = :email";
+    $request = $pdo->prepare($sql);
+    $request->execute(array(
+        ':email' => $email
+
+    ));
+
+    $resultat = $request->fetch();
+    return $resultat;
 }

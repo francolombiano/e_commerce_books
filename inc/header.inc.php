@@ -63,13 +63,13 @@ require_once "functions.inc.php";
 
                         <!-- Login -->
                         <div class="mx-auto">
-                            <a class="nav-link" href="register.php" id="dropdownIcon">
+                            <a class="nav-link" href="#" id="dropdownIcon">
                                 <i class="bi bi-person-circle text-white display-6 col-sm-12 col-md-3"></i>
                             </a>
 
                             <div id="dropdownMenu" class="dropdown-menu col-sm-12 col-md-1 text-center">
-                                <a class="enregistrement choice text-center" href="#">Enregistrement</a>
-                                <a class="login choice text-center" href="#">Commencer la session</a>
+                                <a class="enregistrement choice text-center" href="register.php">Enregistrement</a>
+                                <a class="login choice text-center" href="authentification">Commencer la session</a>
                             </div>
                         </div>
 
