@@ -55,8 +55,8 @@
                             </a>
 
                             <div id="dropdownMenu" class="dropdown-menu col-sm-12 col-md-1 text-center">
-                                <a class="enregistrement choice text-center" href="#">Enregistrement</a>
-                                <a class="login choice text-center" href="#">Commencer la session</a>
+                                <a class="enregistrement choice text-center" href="./register.php">Enregistrement</a>
+                                <a class="login choice text-center" href="">Commencer la session</a>
                             </div>
                         </div>
                         
@@ -82,7 +82,7 @@
         </div> 
 
         <!-- introductory phrase -->
-        <div class="phrase text-center mx-auto p-5 d-sm-none col-md-8">
+        <div class="phrase text-center mx-auto p-5 d-sm-none d-lg-block col-md-8">
             <h3>Acheter des livres n'est pas une dépense, c'est un investissement qui libère l'esprit, le corps et
                 réjouit l'âme.</h3>
         </div>

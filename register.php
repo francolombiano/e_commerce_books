@@ -1,6 +1,146 @@
 <?php
+require_once "inc/functions.inc.php";
+
+// Si l'utilisateur est déjà connecté, il pourras pas avoir accés à la page d'inscription
+// if (!empty($_SESSION['user'])) {
+
+//   header("location:" . RACINE_SITE . "profil.php");
+// }
+
+$info = '';
+$verif = ''; 
+
+if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" ) 
+{
+    // debug($_POST);
+
+    $verif = true;
+  }
+    foreach ($_POST as $value) {
+
+
+        if (empty($value)) {
+
+            $verif = false;
+        }
+    }
+
+    if (!$verif) {
+        debug($_POST);
+
+
+        $info = alert("Veuillez renseigner tout les champs", "danger");
+    } else {
+
+       // debug($_POST);
+      }  
+
+      // On stock les values de nos champs dans des variables et en les passant dans la fonction trim()
+
+      $prenom = isset($_POST['prenom']) ? $_POST['prenom'] : '';
+      $nom = isset($_POST['nom']) ? $_POST['nom'] : '';
+      $tel = isset($_POST['tel']) ? $_POST['tel'] : '';
+      $email = isset($_POST['email']) ? $_POST['email'] : '';
+      $password = isset($_POST['password']) ? $_POST['password'] : '';
+      $confirmPassword = isset($_POST['confirmPassword']) ? $_POST['confirmPassword'] : '';
+      $choice = isset($_POST['choice']) ? $_POST['choice'] : '';
+      $cpostal = isset($_POST['cpostal']) ? $_POST['cpostal'] : '';
+      $ville = isset($_POST['ville']) ? $_POST['ville'] : '';
+      $pays = isset($_POST['pays']) ? $_POST['pays'] : '';
+
+      // $sql = "INSERT INTO users (prenom, nom, tel, email, password, confirmPassword, choice, cpostal, ville, pays) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+      // $pdo = connexionBdd();
+      // $stmt = $pdo->prepare($sql);
+      // $stmt->execute([$prenom, $nom, $tel, $email, $password, $confirmPassword, $choice, $cpostal, $ville, $pays]);
+      // if ($stmt->rowCount() > 0) {
+      //     echo "Datos guardados correctamente";
+      // } else {
+      //     $errorInfo = $pdo->errorInfo();
+      //     echo "Error al guardar los datos: " . $errorInfo[2];
+      // }
+
+
+
+    //   if (strlen($prenom) < 2 || preg_match('/[0-9]+/', $prenom)) {
+
+    //     $info = alert("Le prénom n'est pas valide.", "danger");
+    // }
+
+    // if (strlen($nom) < 2 || preg_match('/[0-9]+/', $nom)) {
+
+    //     $info .= alert("Le nom n'est pas valide.", "danger");
+    // }
+
+    // if (!preg_match('#^[0-9]+$#', $tel) || strlen($tel) > 10 || !trim($tel)) {
+
+    //     $info .= alert("Le Téléphone n'est pas valide.", "danger");
+    // }
+
+    // if (strlen($email) > 50 || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+    //     $info .= alert("L'email n'est pas valide.", "danger");
+    // }
+    // if (strlen($password) < 5 || strlen($password) > 15) {
+
+    //     $info .= alert("Le mot de passe n'est pas valide.", "danger");
+    // }
+    // if ($password !== $confirmPassword) {
+
+    //     $info .= alert("Le mot de passe et la confirmation doivent être identique.", "danger");
+    // }
+
+    // if ($choice != 'f' && $choice != 'h' && $choice != 'autre') {
+    //     $info .= alert("La civilité n'est pas valide.", "danger");
+    // }
+
+    // if (!preg_match('#^[0-9]+$#', $cpostal)) {
+    //     $info .= alert("Le code postal n'est pas valide.", "danger");
+    // }
+
+    // if (strlen($ville) > 20) {
+    //     $info .= alert("La ville n'est pas valide.", "danger");
+    // }
+
+    // if (strlen($pays) < 5 || strlen($pays) > 50) {
+    //     $info .= alert("Le pays n'est pas valide.", "danger");
+    // }
+
+     if (empty($info)) {
+
+       $emailExist = checkEmailUser($email);
+
+        if ($emailExist) {
+
+           $info = alert("Vous avez déjà un compte", "danger");
+           
+
+   
+            // ***************** REDIRECTION "authentification.php"
+
+
+
+        } else if ($password !== $confirmPassword) {
+
+            $info .= alert("Le mot de passe et la confirmation doivent être identiques.", "danger");
+       } else {
+
+             $mdp = password_hash($password, PASSWORD_DEFAULT);
+
+            inscriptionUsers($prenom, $nom, $tel, $email, $password, $confirmPassword, $choice, $cpostal, $ville, $pays);
+
+           $info = alert('Vous êtes bien inscrit, vous pouvez vous connectez !', 'success');
+        }
+    }
+
+ else {
+debug($_POST);
+echo 'Non SUBMIT';
+}
+
+  
 $title = "enregistrement";
 require_once "inc/header.inc.php";
+
 ?>
 
 <main class="bg-register">
@@ -13,8 +153,9 @@ require_once "inc/header.inc.php";
         </section>
 
 <!-- Formulaire de contact -->
+<div id="enrigestrement-reusi" class="error"></div>
 <section class="ecrivez-nous p-5">
-<form action="#" method="#" class="w-50 mx-auto p-3 text-white rounded-5 formV border p-5 col-sm-12 col-md-8">
+<form id="form" action="register.php" method="POST" class="w-50 mx-auto p-3 text-white rounded-5 formV border p-5 col-sm-12 col-md-8">
   
   <div class="p-3 inputs col-sm-12">
       <label for="prenom" class="form-label">Prenom</label>
@@ -33,7 +174,7 @@ require_once "inc/header.inc.php";
 
   <div class="p-3 inputs col-sm-12"> 
   <label for="tel" class="form-label">Téléphone</label> 
-  <input type="number" class="form-control rounded-pill input-custom" id="tel" name="tel" maxlength="10"> 
+  <input type="number" class="form-control rounded-pill input-custom" id="tel" name="tel"> 
   <div id="telephoneError" class="error"></div>
   <span class="inputError"></span> 
 </div>
@@ -135,6 +276,7 @@ require_once "inc/header.inc.php";
 
 </main>
 
+
 <?php
 require_once "inc/footer.inc.php";
-?>
+?> 
