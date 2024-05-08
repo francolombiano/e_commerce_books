@@ -136,6 +136,7 @@ myForm.addEventListener('submit', function(event){
         codePostalError.textContent ='';
         villError.textContent = '';
         paysError.textContent = '';
+        registreReusi.textContent = '';
     
 //Vérifiez que le champ du nom n'est pas vide
   if (valuePrenom === '') {

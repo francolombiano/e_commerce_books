@@ -220,7 +220,19 @@ h1, h3, a {
   color: var(--jaune);
 }
 
+/*authentification*/
 
+.affiche-authentification {
+  background-image: url(../img/bg_authentification.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 75vh; 
+}
+
+.titre-4 {
+  color: var(--jaune);
+}
 
 
 

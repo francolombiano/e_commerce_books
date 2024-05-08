@@ -56,7 +56,7 @@
 
                             <div id="dropdownMenu" class="dropdown-menu col-sm-12 col-md-1 text-center">
                                 <a class="enregistrement choice text-center" href="./register.php">Enregistrement</a>
-                                <a class="login choice text-center" href="">Commencer la session</a>
+                                <a class="login choice text-center" href="">Se conecter</a>
                             </div>
                         </div>
                         

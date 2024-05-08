@@ -27,8 +27,6 @@ if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" )
 
     if (!$verif) {
         debug($_POST);
-
-
         $info = alert("Veuillez renseigner tout les champs", "danger");
     } else {
 
@@ -113,20 +111,16 @@ if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" )
 
            $info = alert("Vous avez déjà un compte", "danger");
            
-
-   
             // ***************** REDIRECTION "authentification.php"
-
-
 
         } else if ($password !== $confirmPassword) {
 
             $info .= alert("Le mot de passe et la confirmation doivent être identiques.", "danger");
        } else {
 
-             $mdp = password_hash($password, PASSWORD_DEFAULT);
+             $password = password_hash($password, PASSWORD_DEFAULT);
 
-            inscriptionUsers($prenom, $nom, $tel, $email, $password, $confirmPassword, $choice, $cpostal, $ville, $pays);
+            inscriptionUsers($prenom, $nom, $tel, $email, $password, $choice, $cpostal, $ville, $pays);
 
            $info = alert('Vous êtes bien inscrit, vous pouvez vous connectez !', 'success');
         }
@@ -155,6 +149,9 @@ require_once "inc/header.inc.php";
 <!-- Formulaire de contact -->
 <div id="enrigestrement-reusi" class="error"></div>
 <section class="ecrivez-nous p-5">
+
+
+
 <form id="form" action="register.php" method="POST" class="w-50 mx-auto p-3 text-white rounded-5 formV border p-5 col-sm-12 col-md-8">
   
   <div class="p-3 inputs col-sm-12">
